@@ -1,0 +1,78 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+
+image: atlassian/default-image:3
+
+clone:
+  depth: full              # SonarCloud scanner needs the full history to assign issues properly
+
+definitions:
+  caches:
+    sonar: ~/.sonar/cache  # Caching SonarCloud artifacts will speed up your build
+    node-theme: node_modules
+
+  steps:
+    - step: &create-dot-env-dev
+        name: "Create .env"
+        script:
+          - cp .env.dev .env
+        artifacts:
+            - .env
+    - step: &create-dot-env-prod
+        name: "Create .env"
+        script:
+          - cp .env.production .env
+        artifacts:
+            - .env
+    - step: &build-test
+        name: Build & Tests
+        image: node:15
+        caches:
+          - node
+          - node-theme
+        script:
+          - yarn install
+          - yarn lint
+          - yarn test
+          - yarn generate
+        artifacts:
+            - dist/**
+    - step: &check-sonarcloud
+        name: SonarCloud
+        caches:
+          - sonar
+        script:
+          - pipe: sonarsource/sonarcloud-scan:1.2.1
+    - step: &check-quality-gate-sonarcloud
+        name: Check the Quality Gate on SonarCloud
+        script:
+          # - pipe: sonarsource/sonarcloud-quality-gate:0.1.4
+          - echo "We need to define Quality gate for this project."
+
+pipelines:
+  default:
+      - step: *create-dot-env-dev
+      - step: *build-test
+      - step: *check-sonarcloud
+      - step: *check-quality-gate-sonarcloud
+  branches:
+    master:
+      - step: *create-dot-env-dev
+      - step: *build-test
+      - step: *check-sonarcloud
+      - step: *check-quality-gate-sonarcloud
+      - step:
+          name: 'Deployment to staging'
+          deployment: staging
+          script:
+            - pipe: atlassian/ftp-deploy:0.3.7
+              variables:
+                USER: $FTP_USERNAME
+                PASSWORD: $FTP_PASSWORD
+                SERVER: $FTP_SERVER
+                REMOTE_PATH: $FTP_REMOTE_PATH_DEV
+                LOCAL_PATH: dist
+                DELETE_FLAG: 'false'
