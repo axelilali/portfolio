@@ -23,8 +23,8 @@ definitions:
           - node-theme
         script:
           - yarn install
-          - yarn lint
-          - yarn test
+          # - yarn lint
+          # - yarn test
           - yarn generate
         artifacts:
             - dist/**
