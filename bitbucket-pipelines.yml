@@ -43,7 +43,7 @@ pipelines:
               variables:
                 USER: root
                 PASSWORD: 25IlaliLukoji
-                SERVER: https://axel-ilali.com
+                SERVER: 207.154.241.111
                 REMOTE_PATH: /axel
                 LOCAL_PATH: dist
                 DELETE_FLAG: 'false'
