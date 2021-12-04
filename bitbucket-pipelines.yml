@@ -37,13 +37,14 @@ pipelines:
       - step: *build-test
       - step:
           name: 'Deployment to staging'
-          deployment: staging
+          trigger: 'manual'
           script:
-            - pipe: atlassian/ftp-deploy:0.3.7
+            - pipe: atlassian/ssh-run:0.3.0
               variables:
-                USER: $FTP_USERNAME
-                PASSWORD: $FTP_PASSWORD
-                SERVER: $FTP_SERVER
-                REMOTE_PATH: $FTP_REMOTE_PATH_DEV
-                LOCAL_PATH: dist
-                DELETE_FLAG: 'false'
+                SSH_USER: 'root'
+                SERVER: '207.154.241.111'
+                SSH_KEY: '25IlaliLukoji'
+                MODE: 'script'
+                COMMAND: 'cd ../home/axel/'
+            - echo "\n"
+            - echo "Deployment finished."
