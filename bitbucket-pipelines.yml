@@ -44,6 +44,6 @@ pipelines:
                 USER: $FTP_USERNAME
                 PASSWORD: $FTP_PASSWORD
                 SERVER: $FTP_SERVER
-                REMOTE_PATH: $FTP_REMOTE_PATH_DEV
+                REMOTE_PATH: $FTP_REMOTE_PATH
                 LOCAL_PATH: dist
                 DELETE_FLAG: 'false'
