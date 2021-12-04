@@ -39,10 +39,11 @@ pipelines:
           name: 'Deployment to staging'
           trigger: 'manual'
           script:
-            - pipe: atlassian/ssh-run:0.4.0
+            - pipe: atlassian/ftp-deploy:0.3.7
               variables:
-                SSH_USER: 'root'
-                SERVER: '207.154.241.111'
-                COMMAND: 'cd ../home/axel/'
-            - echo "\n"
+                USER: 'root'
+                PASSWORD: '25IlaliLukoji'
+                SERVER: 'https://axel-ilali.com'
+                REMOTE_PATH: '/home/axel'
+                LOCAL_PATH: dist
             - echo "Deployment finished."
