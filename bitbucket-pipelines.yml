@@ -39,12 +39,10 @@ pipelines:
           name: 'Deployment to staging'
           trigger: 'manual'
           script:
-            - pipe: atlassian/ssh-run:0.3.0
+            - pipe: atlassian/ssh-run:0.4.0
               variables:
                 SSH_USER: 'root'
                 SERVER: '207.154.241.111'
-                SSH_KEY: '25IlaliLukoji'
-                MODE: 'script'
                 COMMAND: 'cd ../home/axel/'
             - echo "\n"
             - echo "Deployment finished."
