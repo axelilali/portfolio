@@ -44,6 +44,6 @@ pipelines:
                 USER: root
                 PASSWORD: 25IlaliLukoji
                 SERVER: https://axel-ilali.com
-                REMOTE_PATH: ../home/axel/
+                REMOTE_PATH: cd ../home/axel/
                 LOCAL_PATH: dist
             - echo "Deployment finished."
