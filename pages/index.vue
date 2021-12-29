@@ -5,14 +5,18 @@
       <b-container>
         <b-row>
           <b-col>
-            <h1>Hello. <br> I'm a web developer and UI designer based in Kinshasa.</h1>
-            <p>My name is Axel Ilali and I enjoy creating things that live on the internet.</p>
-            <span>Find me on
+            <h1 data-aos="fade-up">
+              Hello. <br> I'm a web developer and UI designer based in Kinshasa.
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+              My name is Axel Ilali and I enjoy creating things that live on the internet.
+            </p>
+            <span data-aos="fade-up" data-aos-delay="300">Find me on
               <strong><a tabindex="blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/axel-ilali/">LinkedIn</a></strong>,
               <strong><a href="" rel="noopener noreferrer">Github</a></strong> and
               <strong><a target="blank" rel="noopener noreferrer" href="https://twitter.com/im__axel">Twitter</a></strong>
             </span>
-            <a class="button" href="mailto:ilali.axel@gmail.com">Let's work together</a>
+            <a data-aos="fade-up" data-aos-delay="400" class="button" href="mailto:ilali.axel@gmail.com">Let's work together</a>
           </b-col>
         </b-row>
       </b-container>
@@ -61,7 +65,7 @@
         <b-container>
           <b-row>
             <b-col>
-              <img width="300" src="~assets/me-3.png" alt="" srcset="">
+              <img data-aos="zoom-in" width="300" src="~assets/me-3.png" alt="" srcset="">
               <h2>What's next ?</h2>
               <p>Feel free to shoot me an email to talk about your next big project. I'll be glad to work with you !</p>
               <a href="mailto:ilali.axel@gmail.com">Hire me</a>
@@ -74,6 +78,8 @@
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
 
   data () {
@@ -122,6 +128,7 @@ export default {
     }
   },
   mounted () {
+    AOS.init({})
     const cursor = document.getElementById('cursor')
     const links = document.querySelectorAll('a')
 
