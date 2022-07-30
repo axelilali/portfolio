@@ -6,17 +6,36 @@
         <b-row>
           <b-col>
             <h1 data-aos="fade-up">
-              Hello. <br> I'm a web developer and UI designer based in Kinshasa.
+              Hello. <br>
+              I'm a web developer and UI designer based in Kinshasa.
             </h1>
             <p data-aos="fade-up" data-aos-delay="200">
-              My name is Axel Ilali and I enjoy creating things that live on the internet.
+              My name is Axel Ilali and I enjoy creating things that live on the
+              internet.
             </p>
-            <span data-aos="fade-up" data-aos-delay="300">Find me on
-              <strong><a tabindex="blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/axel-ilali/">LinkedIn</a></strong>,
-              <strong><a href="" rel="noopener noreferrer">Github</a></strong> and
-              <strong><a target="blank" rel="noopener noreferrer" href="https://twitter.com/im__axel">Twitter</a></strong>
+            <span
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >Find me on
+              <strong><a
+                tabindex="blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/axel-ilali/"
+              >LinkedIn</a></strong>,
+              <strong><a href="" rel="noopener noreferrer">Github</a></strong>
+              and
+              <strong><a
+                target="blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/im__axel"
+              >Twitter</a></strong>
             </span>
-            <a data-aos="fade-up" data-aos-delay="400" class="button" href="mailto:ilali.axel@gmail.com">Let's work together</a>
+            <a
+              data-aos="fade-up"
+              data-aos-delay="400"
+              class="button"
+              href="mailto:ilali.axel@gmail.com"
+            >Let's work together</a>
           </b-col>
         </b-row>
       </b-container>
@@ -26,9 +45,7 @@
       <section id="memoji">
         <b-container>
           <b-row>
-            <b-col>
-              <!-- <img src="~assets/me-1.png" alt="" srcset=""> -->
-            </b-col>
+            <b-col />
           </b-row>
         </b-container>
       </section>
@@ -38,10 +55,26 @@
           <b-row>
             <b-col>
               <h2>About Me</h2>
-              <h3>Mbote <img height="20" src="~assets/waving-hand.png" alt="Waving hand"> ! My name is Axel and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try HTML & CSS. </h3>
-              <p>Fast-forward to today, I have had the privilege of working at super cool web development a start-up, and as a freelancer building awsome web apps.</p>
+              <h3>
+                Mbote
+                <img
+                  height="20"
+                  src="~assets/waving-hand.png"
+                  alt="Waving hand"
+                >
+                ! My name is Axel and I enjoy creating things that live on the
+                internet. My interest in web development started back in 2012
+                when I decided to try HTML & CSS.
+              </h3>
+              <p>
+                Fast-forward to today, I have had the privilege of working at
+                super cool web development start-up, and as a freelancer
+                building awesome web apps.
+              </p>
               <p>Here are a few stuff I’ve been working with :</p>
-              <span v-for="(techno,key) in technos" :key="key">{{ techno }}</span>
+              <span v-for="(techno, key) in technos" :key="key">{{
+                techno
+              }}</span>
             </b-col>
           </b-row>
         </b-container>
@@ -50,13 +83,22 @@
       <section id="work">
         <div v-for="(client, key) in clients" :key="key" class="client-box">
           <div class="name">
-            <img v-if="client.logo" width="150" :src="require('../assets/clients/'+client.logo)" alt="" srcset="">
+            <img
+              v-if="client.logo"
+              width="150"
+              :src="require('../assets/clients/' + client.logo)"
+              :alt="client.name"
+            >
             <p v-else>
               {{ client.name }}
             </p>
           </div>
           <div class="desc">
-            <p><strong>Work with : <u>{{ client.name }}</u></strong> <br> {{ client.desc }}</p>
+            <p>
+              <strong>Work with : <u>{{ client.name }}</u></strong>
+              <br>
+              {{ client.desc }}
+            </p>
           </div>
         </div>
       </section>
@@ -65,9 +107,17 @@
         <b-container>
           <b-row>
             <b-col>
-              <img data-aos="zoom-in" width="300" src="~assets/me-3.png" alt="" srcset="">
+              <img
+                data-aos="zoom-in"
+                width="300"
+                src="~assets/me-3.png"
+                alt="Axel Memoji"
+              >
               <h2>What's next ?</h2>
-              <p>Feel free to shoot me an email to talk about your next big project. I'll be glad to work with you !</p>
+              <p>
+                Feel free to shoot me an email to talk about your next big
+                project. I'll be glad to work with you !
+              </p>
               <a href="mailto:ilali.axel@gmail.com">Hire me</a>
             </b-col>
           </b-row>
@@ -81,10 +131,24 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default {
-
   data () {
     return {
-      technos: ['HTML', 'CSS', 'JavaScript', 'VueJS', 'Nuxt', 'WordPress', 'PHP', 'Twig', 'JQuery', 'Laravel', 'Wix', 'Adobe XD', 'Figma'],
+      technos: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'VueJS',
+        'Nuxt',
+        'WordPress',
+        'PHP',
+        'Twig',
+        'JQuery',
+        'Laravel',
+        'Wix',
+        'Adobe XD',
+        'Figma',
+        'Zeplin'
+      ],
       clients: [
         {
           name: 'Kinshasa Digital',
@@ -151,11 +215,12 @@ export default {
 </script>
 <style lang="scss">
 $primary: #fd8e8e;
-$secondary:#2e304b;
+$secondary: #2e304b;
 $alternate: #6b6c7b;
 $alternate-2: #f1f1f1;
 
-h3,p {
+h3,
+p {
   font-weight: lighter;
 }
 #cursor {
@@ -163,11 +228,11 @@ h3,p {
   position: fixed;
   width: 50px;
   height: 50px;
-  border:2px solid #ddd;
+  border: 2px solid #ddd;
   z-index: 20;
   border-radius: 50%;
-  transform: translate(-50%,-50%);
-  transition: all ease-out .1s;
+  transform: translate(-50%, -50%);
+  transition: all ease-out 0.1s;
   pointer-events: none;
   &.grow {
     width: 80px;
@@ -176,20 +241,20 @@ h3,p {
 }
 .button {
   color: $primary;
-  border:2px solid $primary;
+  border: 2px solid $primary;
   background: transparent;
   display: inline-block;
   padding: 15px 30px;
   border-radius: 40px;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
   &:hover {
     background: $primary;
     color: $secondary;
     text-decoration: none;
     #cursor {
-    width: 100px;
-    height: 100px;
-  }
+      width: 100px;
+      height: 100px;
+    }
   }
 }
 #intro {
@@ -203,7 +268,7 @@ h3,p {
   align-items: center;
   span {
     color: #b5b6bd;
-    font-size: .8125rem;
+    font-size: 0.8125rem;
     margin-bottom: 50px;
     display: block;
     font-weight: lighter;
@@ -212,7 +277,8 @@ h3,p {
     }
   }
 
-  h1,p {
+  h1,
+  p {
     margin-bottom: 50px;
   }
 }
@@ -230,7 +296,7 @@ main {
   #memoji {
     z-index: 1;
     text-align: center;
-    background: url('~assets/bg-2.jpg') no-repeat;
+    background: url("~assets/bg-2.jpg") no-repeat;
     background-size: cover;
     img {
       max-width: 100%;
@@ -238,13 +304,14 @@ main {
   }
   #about {
     z-index: 2;
-    background: #fff ;
+    background: #fff;
     color: $secondary;
-    h2,h3 {
+    h2,
+    h3 {
       margin-bottom: 20px;
     }
     p {
-      color:$alternate;
+      color: $alternate;
     }
     span {
       display: inline-block;
@@ -253,14 +320,14 @@ main {
       color: #fff;
       margin-right: 10px;
       margin-bottom: 10px;
-      font-size: .875rem;
+      font-size: 0.875rem;
       border-radius: 20px;
     }
   }
   #work {
     z-index: 3;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2px;
     padding: 0px;
     background: #fff;
@@ -273,8 +340,11 @@ main {
       align-items: center;
       justify-content: center;
       height: 100%;
-      p {margin: 0;}
-      .name,.desc {
+      p {
+        margin: 0;
+      }
+      .name,
+      .desc {
         position: absolute;
         left: 0;
         top: 0;
@@ -287,7 +357,7 @@ main {
       .name {
         background: $alternate-2;
         z-index: 3;
-        transition: all ease .1s;
+        transition: all ease 0.1s;
         font-weight: bold;
         justify-content: center;
         p {
@@ -298,7 +368,7 @@ main {
         background: #fff;
         z-index: 2;
         p {
-          transition: all ease .3s;
+          transition: all ease 0.3s;
           transform: translateY(10px);
         }
       }
@@ -306,7 +376,9 @@ main {
         .name {
           opacity: 0;
         }
-        .desc p {transform: translateY(0px);}
+        .desc p {
+          transform: translateY(0px);
+        }
       }
     }
   }
@@ -324,7 +396,7 @@ main {
     }
   }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   #intro {
     position: relative;
     width: 100%;
@@ -342,24 +414,28 @@ main {
     }
   }
 }
-@media screen and (max-width:576px) {
+@media screen and (max-width: 576px) {
   #cursor {
     display: none;
   }
   main {
     #work {
-      img {max-width: 100%;}
+      img {
+        max-width: 100%;
+      }
       .client-box .desc p {
-        font-size: .875rem;
+        font-size: 0.875rem;
       }
     }
     #contact {
-      img { max-width: 100%;}
+      img {
+        max-width: 100%;
+      }
     }
   }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 320px) {
   h1 {
     font-size: 30px;
   }
@@ -378,8 +454,8 @@ main {
       .client-box .desc {
         padding: 20px;
         p {
-        font-size: .625rem;
-      }
+          font-size: 0.625rem;
+        }
       }
     }
   }
