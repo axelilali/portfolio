@@ -12,10 +12,9 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_1a768efa from 'nuxt_plugin_plugin_1a768efa' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_bootstrapvue_5235f570 from 'nuxt_plugin_bootstrapvue_5235f570' // Source: ./bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_axios_0eed5019 from 'nuxt_plugin_axios_0eed5019' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_googleanalytics_3a7da326 from 'nuxt_plugin_googleanalytics_3a7da326' // Source: ./google-analytics.js (mode: 'client')
+import nuxt_plugin_plugin_577082d6 from 'nuxt_plugin_plugin_577082d6' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_56f1e45a from 'nuxt_plugin_bootstrapvue_56f1e45a' // Source: ./bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_axios_54cb612b from 'nuxt_plugin_axios_54cb612b' // Source: ./axios.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -65,7 +64,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Axel Ilali | Web Developer based in Congo DR","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"Axel Ilali | Web Developer based in Congo DR","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Hi ! my name Axel Ilali. I am a web developer\u002FUI designer based in Kinshasa"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
     router,
     nuxt: {
@@ -179,20 +178,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_1a768efa === 'function') {
-    await nuxt_plugin_plugin_1a768efa(app.context, inject)
+  if (typeof nuxt_plugin_plugin_577082d6 === 'function') {
+    await nuxt_plugin_plugin_577082d6(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_5235f570 === 'function') {
-    await nuxt_plugin_bootstrapvue_5235f570(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_56f1e45a === 'function') {
+    await nuxt_plugin_bootstrapvue_56f1e45a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_0eed5019 === 'function') {
-    await nuxt_plugin_axios_0eed5019(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_googleanalytics_3a7da326 === 'function') {
-    await nuxt_plugin_googleanalytics_3a7da326(app.context, inject)
+  if (typeof nuxt_plugin_axios_54cb612b === 'function') {
+    await nuxt_plugin_axios_54cb612b(app.context, inject)
   }
 
   // Lock enablePreview in context

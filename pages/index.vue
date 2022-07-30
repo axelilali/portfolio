@@ -56,7 +56,7 @@
             </p>
           </div>
           <div class="desc">
-            <p><strong>{{ client.name }}</strong> <br> {{ client.desc }}</p>
+            <p><strong>Work with : <u>{{ client.name }}</u></strong> <br> {{ client.desc }}</p>
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default {
       technos: ['HTML', 'CSS', 'JavaScript', 'VueJS', 'Nuxt', 'WordPress', 'PHP', 'Twig', 'JQuery', 'Laravel', 'Wix', 'Adobe XD', 'Figma'],
       clients: [
         {
-          name: 'Kinhsasa Digital',
+          name: 'Kinshasa Digital',
           desc: 'Built several custom WordPress themes and web apps for big clients',
           logo: 'kinshasa-digital.png'
         },
@@ -291,7 +291,7 @@ main {
         font-weight: bold;
         justify-content: center;
         p {
-          font-size: 20px;
+          font-size: 1.25rem;
         }
       }
       .desc {
@@ -345,6 +345,43 @@ main {
 @media screen and (max-width:576px) {
   #cursor {
     display: none;
+  }
+  main {
+    #work {
+      img {max-width: 100%;}
+      .client-box .desc p {
+        font-size: .875rem;
+      }
+    }
+    #contact {
+      img { max-width: 100%;}
+    }
+  }
+}
+
+@media screen and (max-width:320px) {
+  h1 {
+    font-size: 30px;
+  }
+  main {
+    #about {
+      position: relative;
+      height: max-content;
+      .container {
+        padding: 50px 10px;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+    #work {
+      .client-box .desc {
+        padding: 20px;
+        p {
+        font-size: .625rem;
+      }
+      }
+    }
   }
 }
 </style>
